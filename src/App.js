@@ -1,5 +1,6 @@
 import "./App.css";
 import React, { useEffect, useState } from "react";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 //the card of the character
 // now I want to change it dynamically so i use props and look at the matching ones from the api
@@ -50,15 +51,17 @@ function App() {
   }
 
   return (
-    <div className="App">
-      <h1> Star Wars Catalog</h1>
-      <div className="card-container">
-        {listCharacters.map(function (character) {
-          return <Card character={character}></Card>;
-        })}
+    <Router>
+      <div className="App">
+        <h1> Star Wars Catalog</h1>
+        <div className="card-container">
+          {listCharacters.map(function (character) {
+            return <Card character={character}></Card>;
+          })}
+        </div>
+        <button onClick={loadMore}>Load More</button>
       </div>
-      <button onClick={loadMore}>Load More</button>
-    </div>
+    </Router>
     // this button is related to the Load more function which allows the user to load more of the star wars characters
   );
 }
