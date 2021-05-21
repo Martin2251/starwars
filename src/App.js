@@ -2,14 +2,16 @@ import "./App.css";
 import React, { useEffect, useState } from "react";
 
 //the card of the character
-
-function Card() {
+// now I want to change it dynamically so i use props and look at the matching ones from the api
+function Card(props) {
   return (
+    //as it reads from the api.
+    // the films one is .length because I need to get to an array for the number of films
     <div>
-      <h4>Luke Skywalker</h4>
-      <p>Height: 177cm</p>
-      <p>Birth: 177cm</p>
-      <p>5 films </p>
+      <h4>{props.character.name}</h4>
+      <p>{props.character.height}</p>
+      <p>{props.character.birth_year}</p>
+      <p>{props.character.films.length} </p>
     </div>
   );
 }
