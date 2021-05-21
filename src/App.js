@@ -36,11 +36,13 @@ function App() {
 
   // Load more will change the state of the app, load more on the bottom of the page
   function loadMore() {
+    // fetch the next url
     fetch(nextUrl)
       .then(function (response) {
         return response.json();
       })
       .then(function (data) {
+        // update the state
         setListCharacters([...listCharacters, ...data.results]);
         // set the next of the page
         setNextUrl(data.next);
@@ -49,11 +51,14 @@ function App() {
 
   return (
     <div className="App">
-      {listCharacters.map(function (character) {
-        return <Card character={character}></Card>;
-      })}
+      <div className="card-container">
+        {listCharacters.map(function (character) {
+          return <Card character={character}></Card>;
+        })}
+      </div>
       <button onClick={loadMore}>Load More</button>
     </div>
+    // this button is related to the Load more function which allows the user to load more of the star wars characters
   );
 }
 
