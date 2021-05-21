@@ -51,6 +51,7 @@ function App() {
 
   return (
     <div className="App">
+      <h1> Star Wars Catalog</h1>
       <div className="card-container">
         {listCharacters.map(function (character) {
           return <Card character={character}></Card>;
