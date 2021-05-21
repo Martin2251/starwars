@@ -5,16 +5,17 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 //the card of the character
 // now I want to change it dynamically so i use props and look at the matching ones from the api
 function Card(props) {
-  return (
-    //as it reads from the api.
-    // the films one is .length because I need to get to an array for the number of films
+  return;
+  //as it reads from the api.
+  // the films one is .length because I need to get to an array for the number of films
+  <link>
     <div className="card">
       <h4>Name:{props.character.name}</h4>
       <p>Height:{props.character.height}</p>
       <p>Birth Year:{props.character.birth_year}</p>
       <p>Number of Films:{props.character.films.length} </p>
     </div>
-  );
+  </link>;
 }
 
 function App() {
@@ -52,15 +53,19 @@ function App() {
 
   return (
     <Router>
-      <div className="App">
-        <h1> Star Wars Catalog</h1>
-        <div className="card-container">
-          {listCharacters.map(function (character) {
-            return <Card character={character}></Card>;
-          })}
-        </div>
-        <button onClick={loadMore}>Load More</button>
-      </div>
+      <Switch>
+        <Route to="/">
+          <div className="App">
+            <h1> Star Wars Catalog</h1>
+            <div className="card-container">
+              {listCharacters.map(function (character) {
+                return <Card character={character}></Card>;
+              })}
+            </div>
+            <button onClick={loadMore}>Load More</button>
+          </div>
+        </Route>
+      </Switch>
     </Router>
     // this button is related to the Load more function which allows the user to load more of the star wars characters
   );
