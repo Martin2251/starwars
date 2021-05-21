@@ -34,11 +34,25 @@ function App() {
       });
   }, []);
 
+  // Load more will change the state of the app, load more on the bottom of the page
+  function loadMore() {
+    fetch(nextUrl)
+      .then(function (response) {
+        return response.json();
+      })
+      .then(function (data) {
+        setListCharacters([...listCharacters, ...data.results]);
+        // set the next of the page
+        setNextUrl(data.next);
+      });
+  }
+
   return (
     <div className="App">
       {listCharacters.map(function (character) {
         return <Card character={character}></Card>;
       })}
+      <button onClick={loadMore}>Load More</button>
     </div>
   );
 }
