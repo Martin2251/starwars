@@ -7,11 +7,11 @@ function Card(props) {
   return (
     //as it reads from the api.
     // the films one is .length because I need to get to an array for the number of films
-    <div>
-      <h4>{props.character.name}</h4>
-      <p>{props.character.height}</p>
-      <p>{props.character.birth_year}</p>
-      <p>{props.character.films.length} </p>
+    <div className="card">
+      <h4>Name:{props.character.name}</h4>
+      <p>Height:{props.character.height}</p>
+      <p>Birth Year:{props.character.birth_year}</p>
+      <p>Number of Films:{props.character.films.length} </p>
     </div>
   );
 }
