@@ -5,15 +5,18 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 //the card of the character
 // now I want to change it dynamically so i use props and look at the matching ones from the api
 function Card(props) {
+  const id = props.character.url.split("/")[5];
   //as it reads from the api.
   // the films one is .length because I need to get to an array for the number of films
 
   return (
     <div className="card">
-      <h4>{props.character.name}</h4>
-      <p>Height:{props.character.height}</p>
-      <p>Birth Year:{props.character.birth_year}</p>
-      <p>Number of Films:{props.character.films.length} </p>
+      <Link to={`/character/${id}`}>
+        <h4>{props.character.name}</h4>
+        <p>Height:{props.character.height}</p>
+        <p>Birth Year:{props.character.birth_year}</p>
+        <p>Number of Films:{props.character.films.length} </p>
+      </Link>
     </div>
   );
 }
@@ -54,6 +57,9 @@ function App() {
   return (
     <Router>
       <Switch>
+        <Route path="/character/:id">
+          <h1> some info</h1>
+        </Route>
         <Route to="/">
           <div className="App">
             <h1> Star Wars Catalog</h1>
