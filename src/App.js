@@ -1,6 +1,33 @@
 import "./App.css";
 import React, { useEffect, useState } from "react";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link,
+  useParams,
+} from "react-router-dom";
+
+function CharacterPage() {
+  let { id } = useParams();
+  const [characterData, setCharacterData] = useState("");
+
+  useEffect(function () {
+    fetch("https://swapi.dev/api/people/" + id)
+      .then(function (response) {
+        return response.json();
+      })
+      .then((data) => {
+        setCharacterData(data);
+      });
+  }, []);
+
+  return (
+    <div>
+      <h1>{characterData.name}</h1>
+    </div>
+  );
+}
 
 //the card of the character
 // now I want to change it dynamically so i use props and look at the matching ones from the api
@@ -58,7 +85,7 @@ function App() {
     <Router>
       <Switch>
         <Route path="/character/:id">
-          <h1> some info</h1>
+          <CharacterPage></CharacterPage>
         </Route>
         <Route to="/">
           <div className="App">
