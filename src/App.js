@@ -24,7 +24,8 @@ function CharacterPage() {
 
   return (
     <div>
-      <h1>{characterData.name}</h1>
+      <h1>Name: {characterData.name}</h1>
+      <h1>Height: {characterData.height}</h1>
     </div>
   );
 }
@@ -95,7 +96,9 @@ function App() {
                 return <Card character={character}></Card>;
               })}
             </div>
-            <button onClick={loadMore}>Load More</button>
+            <button onClick={loadMore} data-cy="load-more">
+              Load More
+            </button>
           </div>
         </Route>
       </Switch>
