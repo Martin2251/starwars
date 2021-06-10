@@ -1,57 +1,92 @@
-.card-container {
-  text-align: center;
+.title {
   display: flex;
   justify-content: center;
+  margin-top: 3rem;
+  font-size: 4rem;
+  color: #f46d00;
+}
+h2 {
+  color: #f46d00;
+  font-size: 2rem;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+p {
+  font-size: 1.2rem;
+}
+.container {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
   flex-wrap: wrap;
-}
 
-.card {
-  width: calc(30% -20px);
-  border: 1px solid gray;
-  margin: 10px;
+  margin-left: 3rem;
+  margin-right: 3rem;
+}
+.character {
   display: flex;
-  justify-content: flex-start;
   flex-direction: column;
-  align-items: flex-start;
-  padding: 10px;
-  height: 200px;
-}
-
-.card:hover {
+  justify-content: space-evenly;
+  width: 200px;
+  padding-left: 1rem;
+  padding-right: 3rem;
+  padding-bottom: 1rem;
+  border: solid #f46d00 1px;
+  border-radius: 5px;
+  margin-left: 3rem;
+  margin-right: 3rem;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+  height: 350px;
   cursor: pointer;
-  background-color: honeydew;
+  text-decoration: none;
 }
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.character:hover {
+  background-color: #fff2e8;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.btn-place {
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
 }
-
-.App-link {
-  color: #61dafb;
+.btn {
+  border: solid #f46d00 1px;
+  border-radius: 8px;
+  color: black;
+  background-color: #ff821e;
+  height: 3rem;
+  align-self: center;
+  width: 10rem;
+  cursor: pointer;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.btn:hover {
+  background-color: #f46d00;
+}
+.btn-details {
+  border: solid #f46d00 1px;
+  border-radius: 8px;
+  color: black;
+  background-color: #ff821e;
+  height: 2rem;
+  align-content: center;
+  width: 7rem;
+  cursor: pointer;
+}
+.btn-details:hover {
+  background-color: #f46d00;
+}
+.listTitle:hover {
+  color: #f46d00;
+}
+.titleYear {
+  display: flex;
+  justify-content: space-between;
+}
+.crawl {
+  margin-top: 2rem;
+  text-align: justify;
+  padding-left: 5rem;
+  padding-right: 5rem;
 }
